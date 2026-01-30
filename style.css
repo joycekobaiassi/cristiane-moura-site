@@ -1,0 +1,27 @@
+const buttons = document.querySelectorAll('.accordion-btn');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.target;
+    const content = document.getElementById(targetId);
+
+    // Toggle open/close
+    content.classList.toggle('open');
+
+    // Ajusta max-height para animação
+    if(content.classList.contains('open')){
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = null;
+    }
+  });
+});
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background: #ffffff !important;
+}
+.logo-box {
+  background: #ffffff;
+  display: inline-block;
+}
